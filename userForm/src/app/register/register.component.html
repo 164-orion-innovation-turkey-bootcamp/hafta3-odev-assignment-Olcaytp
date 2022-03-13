@@ -1,0 +1,15 @@
+<p>register works!</p>
+<p *ngIf="errorMessage" >{{errorMessage }}</p> <!--varsa göster dedik-->
+<form [formGroup]="loginForm" (submit)="onSubmit()" > <!--formgroup ile ractive forma dönüştürdük-->
+  <label for="email">Your email</label>
+  <input type="text" id="email" [formControlName]="'email'"/>
+  <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched"> email düzgün girilmedi!! </span>
+  <br>
+  <label for="password">Password</label>
+  <input type="password" id="password" [formControlName]="'password'"/>
+  <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+  Şifre: [A-Z, a-z, 6-30 karakter] içermelidir. </span>
+  <br>
+  <!-- <button type="submit" [disabled]="!loginForm.valid" >submit</button> -->
+  <button type="submit">submit</button>
+</form>
