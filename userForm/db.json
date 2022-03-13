@@ -6,6 +6,13 @@
         "password": "123Asd"
       },
       "id": 1
+    },
+    {
+      "user": {
+        "email": "emre@emre.com",
+        "password": "Emre123"
+      },
+      "id": 2
     }
   ]
 }

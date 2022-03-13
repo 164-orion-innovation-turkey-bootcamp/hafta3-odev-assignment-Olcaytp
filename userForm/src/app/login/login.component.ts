@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [
         Validators.required,
-        Validators.pattern('((?=.*[a-z])(?=.*[A-Z]).{6,30})'),
+        Validators.pattern('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,30})'),
       ]),
     });
   }
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
           this.loginForm.reset();
           this.router.navigate(['/home']);
         } else {
-          this.errorMessage = 'Böyle bir kullanıcı yok !!!';
+          this.errorMessage = 'Email ya da şifre hatalı !!!';
           this.timer();
         }
       });

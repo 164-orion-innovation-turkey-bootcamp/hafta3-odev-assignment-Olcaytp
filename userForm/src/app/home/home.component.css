@@ -1,0 +1,31 @@
+.section {
+  background: url(../../assets/img/background.jpg);
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  margin-left: 15px;
+  padding: 10px 14px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(141, 0, 0, 0.541);
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  flex-direction: column;
+}
+
+.logout-button {
+  border: 1px solid white;
+  background: black;
+  color: white;
+  margin: 5rem auto;
+  font-size: 20px;
+  min-width: 1px;
+  padding: 0.1rem;
+  transition: 250ms background ease-in;
+}
