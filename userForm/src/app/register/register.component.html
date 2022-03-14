@@ -1,29 +1,32 @@
-
-
 <div id="register">
   <h3 class="text-center text-white pt-5">Register form</h3>
   <div class="container">
       <div id="login-row" class="row justify-content-center align-items-center">
           <div id="login-column" class="col-md-6">
               <div id="login-box" class="col-md-12">
-                  <form id="login-form" class="form" [formGroup]="loginForm" (submit)="onSubmit()">
+                  <form id="login-form" class="form" [formGroup]="registerForm" (submit)="onSubmit()">
                       <h3 class="text-center text-info">Register</h3>
                       <div class="form-group">
-                          <label class="text-info">Email:</label><br>
-                          <input type="text" [formControlName]="'email'" class="form-control">
-                          <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched" > email düzgün girilmedi!! </span>
+                          <label class="text-info">Full Name</label><br>
+                          <input type="text" [formControlName]="'fullname'" type="text" class="form-control">
+                          <span *ngIf="!registerForm.get('fullname').valid && registerForm.get('fullname').touched" > Full Name is required!! </span>
                       </div>
                       <div class="form-group">
-                          <label class="text-info">Password:</label><br>
+                          <label class="text-info">Email</label><br>
+                          <input type="text" [formControlName]="'email'" class="form-control">
+                          <span *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched" > Email must be correct!! </span>
+                      </div>
+                      <div class="form-group">
+                          <label class="text-info">Password</label><br>
                           <input type="password" [formControlName]="'password'" class="form-control">
-                          <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" > Password düzgün girilmedi!! </span>
+                          <span *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched" > Password must be written!! </span>
                           <span
                           class="text-danger"
                           *ngIf="
-                            loginForm.get('password')!.hasError('pattern') &&
-                            loginForm.get('password').touched
+                            registerForm.get('password')!.hasError('pattern') &&
+                            registerForm.get('password').touched
                           "
-                          >şifre en az 6 haneli ve ("a-z" , "A-Z" , "0-9" ) içermelidir.
+                          >Password must include at least one of the characters ("a-z" , "A-Z" , "0-9" )
                         </span>
 
                       </div>

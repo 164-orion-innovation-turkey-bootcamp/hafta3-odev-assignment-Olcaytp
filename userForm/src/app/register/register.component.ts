@@ -9,14 +9,15 @@ import { DataserviceService } from '../dataservice.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  loginForm: FormGroup; //reactiveform için kullanıyoruz
+  registerForm: FormGroup; //reactiveform için kullanıyoruz
   errorMessage: string;
 
   constructor(private router: Router, private dataService: DataserviceService ) { }
 
 
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
+    this.registerForm = new FormGroup({
+      fullname : new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [
         Validators.required,
@@ -26,15 +27,16 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.loginForm.valid)
+    if(this.registerForm.valid)
     {
       const userInfo = {
-        email: this.loginForm.get('email').value,
-        password: this.loginForm.get('password').value
+        fullname: this.registerForm.get('fullname').value,
+        email: this.registerForm.get('email').value,
+        password: this.registerForm.get('password').value
       };
 
-      this.dataService.postData(userInfo).subscribe((olcay) => {
-        console.log(olcay);
+      this.dataService.postData(userInfo).subscribe((key) => {
+        console.log(key);
         this.router.navigate(['/login'])
       });
     }
@@ -57,7 +59,7 @@ export class RegisterComponent implements OnInit {
     //       //burda browserin deposu olan localstorage'a bi tane string yazıyoruz.
     //       //Sadece string veya number primitive yapı koyuyoruz.user başlığı altında user email ve passwordünü json.
     //       //stringify metodu ile stringe çevirip local storage a kaydediyoruz
-    //       this.loginForm.reset();
+    //       this.registerForm.reset();
     //       this.router.navigate(['/home']);
     //     } else {
     //       this.errorMessage = 'Böyle bir kullanıcı yok !!!';

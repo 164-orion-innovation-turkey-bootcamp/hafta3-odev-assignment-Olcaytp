@@ -13,6 +13,35 @@
         "password": "Emre123"
       },
       "id": 2
+    },
+    {
+      "user": {
+        "email": "test1@gmail.com",
+        "password": "123Asd"
+      },
+      "id": 3
+    },
+    {
+      "user": {
+        "email": "test1@gmail.com",
+        "password": "123Asd"
+      },
+      "id": 4
+    },
+    {
+      "user": {
+        "email": "test1@gmail.com",
+        "password": "123Assd"
+      },
+      "id": 5
+    },
+    {
+      "user": {
+        "fullname": "Eyüp Fırat",
+        "email": "test1@gmail.com",
+        "password": "123aSD"
+      },
+      "id": 6
     }
   ]
 }
